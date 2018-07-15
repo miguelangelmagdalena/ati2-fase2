@@ -13,28 +13,31 @@
 ## 3. Importar Json a Mongo
 
 En windows en mi caso, desde el directorio donde tenemos mongo C:\Program Files\MongoDB\Server\4.0\bin ubicando la ruta de nuestro archivo db_institutions.json, importamos con el siguiente comando: 
+	
 	mongoimport --db institution --collection institutions --file "C:\ati-fase2\db_institutions.json" --jsonArray
 
 Y podemos comprobar el import con:
+	
 	use institution
 	db.institutions.find().pretty()
 
 ## 4. Iniciar la aplicación
 
 Dentro del directorio ati-fase2 ejecutar:
+	
 	npm start
 
-	### 4.1 Rutas de nuestra API REST
+### 4.1 Rutas de nuestra API REST
 
-	GET - Listar todas las instituciones
+GET - Listar todas las instituciones
 		http://localhost:3000/institution
-	POST - Agregar institución
+POST - Agregar institución
 		http://localhost:3000/institution
-	GET, PUT, DELELETE - Por el campo _id
+GET, PUT, DELELETE - Por el campo _id
 		http://localhost:3000/institution/:id
 
-	Otros
-	GET - Buscar por id y compara con el determinado campo
+#### Otros
+GET - Buscar por id y compara con el determinado campo
 		http://localhost:3000/institution/name/:id
 		http://localhost:3000/institution/uri/:id
 		http://localhost:3000/institution/uid/:id
