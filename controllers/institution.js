@@ -15,7 +15,7 @@ function getInstitutions (req, res) {
 		if(!inst) {
 			return res.status(404).send({ message: `No existen instituciones`})
 		}
-		res.status(200).send({ institution: inst})
+		res.status(200).send(inst)
 	})
 }
 
@@ -44,7 +44,7 @@ function addInstitution (req, res){
 		if(err) {
 			res.status(500).send({ message: `Error al guardar en la base de datos ${err}`})
 		}
-		res.status(200).send({ institution: institutionStored})
+		res.status(200).send(institutionStored)
 	})
 
 }
@@ -58,7 +58,8 @@ function getInstitution (req, res) {
 		if(!instituto) {
 			return res.status(404).send({ message: `La institución no existe`})
 		}
-		res.status(200).send({ institution: instituto})
+		/*res.status(200).send({ institution: instituto})*/
+		res.status(200).send(instituto)
 	})
 
 }
@@ -111,7 +112,7 @@ function getInstitutionByName (req, res) {
 		if(!instituto) {
 			return res.status(404).send({ message: `La institución no existe`})
 		}
-		res.status(200).send({ institution: instituto})
+		res.status(200).send(instituto)
 	})
 }
 function getInstitutionByUri (req, res) {
@@ -123,7 +124,7 @@ function getInstitutionByUri (req, res) {
 		if(!instituto) {
 			return res.status(404).send({ message: `La institución no existe`})
 		}
-		res.status(200).send({ institution: instituto})
+		res.status(200).send(instituto)
 	})
 }
 function getInstitutionByUid (req, res) {
@@ -135,7 +136,7 @@ function getInstitutionByUid (req, res) {
 		if(!instituto) {
 			return res.status(404).send({ message: `La institución no existe`})
 		}
-		res.status(200).send({ institution: instituto})
+		res.status(200).send(instituto)
 	})
 }
 function getInstitutionByAcronym (req, res) {
@@ -147,7 +148,7 @@ function getInstitutionByAcronym (req, res) {
 		if(!instituto) {
 			return res.status(404).send({ message: `La institución no existe`})
 		}
-		res.status(200).send({ institution: instituto})
+		res.status(200).send(instituto)
 	})
 }
 function getInstitutionByEmail (req, res) {
@@ -159,7 +160,7 @@ function getInstitutionByEmail (req, res) {
 		if(!instituto) {
 			return res.status(404).send({ message: `La institución no existe`})
 		}
-		res.status(200).send({ institution: instituto})
+		res.status(200).send(instituto)
 	})
 }
 function getInstitutionByPubDescription (req, res) {
@@ -171,7 +172,7 @@ function getInstitutionByPubDescription (req, res) {
 		if(!instituto) {
 			return res.status(404).send({ message: `La institución no existe`})
 		}
-		res.status(200).send({ institution: instituto})
+		res.status(200).send(instituto)
 	})
 }
 function getInstitutionByWebsiteURL (req, res) {
@@ -183,7 +184,7 @@ function getInstitutionByWebsiteURL (req, res) {
 		if(!instituto) {
 			return res.status(404).send({ message: `La institución no existe`})
 		}
-		res.status(200).send({ institution: instituto})
+		res.status(200).send(instituto)
 	})
 }
 module.exports = {
