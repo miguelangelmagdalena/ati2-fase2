@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "ab570d36-6205-4418-8ba3-2c37417bc91b",
+		"name": "ATI_II_FASE2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Listar toda las instituciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/institution/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"institution",
+						""
+					]
+				},
+				"description": "Te permite listar todas las instituciones"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Agregar institución",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "miguel",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "uri",
+							"value": "https://algo.com/",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "miguel999",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "acronym",
+							"value": "",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "miguelangelmagdalena@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "pubDescription",
+							"value": "Es una prueba de agregar",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "websiteUrl",
+							"value": "",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/institution",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"institution"
+					]
+				},
+				"description": "Agregar institucion"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Buscar institucion por _id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/institution/5b4bd157159e54d7be8ab8b4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"institution",
+						"5b4bd157159e54d7be8ab8b4"
+					]
+				},
+				"description": "Te permite buscar institucion por _id de mongo"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Modificar institucion por _id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Nueva Institución",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "uri",
+							"value": "https://institution.com",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/institution/5b4bd157159e54d7be8ab8b4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"institution",
+						"5b4bd157159e54d7be8ab8b4"
+					]
+				},
+				"description": "Permite modificar los campos que necesites de la institucion\n\nname: String,\nuri: String,\nuid: String,\nacronym: String,\nemail: String,\npubDescription: String,\nwebsiteUrl: String"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Borra la institucion por id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/institution/5b4bd157159e54d7be8ab8b6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"institution",
+						"5b4bd157159e54d7be8ab8b6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Por atributo name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "miguelangel",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "acronym",
+							"value": "miguelito",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/institution/name/American Museum of Natural History",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"institution",
+						"name",
+						"American Museum of Natural History"
+					]
+				},
+				"description": "Y otras formas de filtrar\r\n\r\nhttp://localhost:3000/institution/name/:id\r\nhttp://localhost:3000/institution/uri/:id\r\nhttp://localhost:3000/institution/uid/:id\r\nhttp://localhost:3000/institution/acronym/:id\r\nhttp://localhost:3000/institution/email/:id\r\nhttp://localhost:3000/institution/pubDescription/:id\r\nhttp://localhost:3000/institution/websiteUrl/:id"
+			},
+			"response": []
+		}
+	]
+}
